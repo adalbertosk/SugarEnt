@@ -1,3 +1,77 @@
-/db
-/sugar
-/scripts
+# SugarCRM .gitignore file
+
+# ignore contents of cache directory
+sugar/cache/*
+!sugar/cache/index.html
+
+# ignore non necessary parts of custom directory
+sugar/custom/Extension/application/Ext/*/*orderMapping*
+sugar/custom/Extension/modules/*/Ext/*/*orderMapping*
+sugar/custom/application/Ext/*
+sugar/custom/history/*
+sugar/custom/modulebuilder/*
+sugar/custom/modules/*/Ext/*
+sugar/custom/modules/*/*/Ext/*
+sugar/custom/modules/Connectors/metadata/connectors.php
+sugar/custom/working/*
+
+# ignore private blowfish files
+sugar/custom/blowfish/*
+
+# ignore contents of upload directory
+sugar/upload/*
+sugar/upload:/*
+!sugar/upload/index.html
+
+# ignore server specific configuration
+# create a config4ref.php by merging config_override.php into config.php
+# remove sensitive usernames & passwords, and system specific config (ie. stuff relevant to PROD only)
+sugar/config.php
+sugar/config_si.php
+
+#ignore auto-generated portal config - ENT/ULT only
+sugar/portal2/config.js
+sugar/portal2/error.js
+
+# ignore webserver config files
+# create a .<filename>4ref
+sugar/.htaccess
+sugar/web.config
+
+# ignore silent upgrade scripts
+sugar/silentUpgrade*.php
+sugar/SILENTUPGRADE.txt
+
+# ignore all log files
+*.log
+
+# ignore index.html which is for sandbox only
+sugar/index.html
+
+# ignore other non-sugar files
+.idea/*
+sugar/.idea/*
+nbproject/*
+sugar/nbproject/*
+*.svn
+.DS_Store
+.vagrant/*
+typings/*
+
+# Visual Studio Code
+.vscode/*
+jsconfig.json
+typings.json
+
+# Docker config files
+docker-compose.yml
+Dockerfile
+.dockerignore
+.docker.env
+/docker
+
+# add project specific files to be ignored here:
+sugar/custom/modules/Connectors/connectors/sources/ext/rest/acton/config.php
+sugar/cache/index.html
+sugar/config_override.php
+sugar/config_override.php
