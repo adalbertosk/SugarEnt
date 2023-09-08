@@ -28,5 +28,10 @@ $dictionary['Account']['fields']['code3_c']['vname']='LBL_CODE3_C';
 $dictionary['Account']['fields']['code3_c']['type']='varchar';
 $dictionary['Account']['fields']['code3_c']['source']='custom_fields';
 
+$dictionary['Account']['fields']['dropdown_c']['name']='dropdown_c';
+$dictionary['Account']['fields']['dropdown_c']['vname']='LBL_DROPDOWN_C';
+$dictionary['Account']['fields']['dropdown_c']['type']='enum';
+$dictionary['Account']['fields']['dropdown_c']['options']='dropdown_list';
+$dictionary['Account']['fields']['dropdown_c']['source']='custom_fields';
 
- ?>
+?>

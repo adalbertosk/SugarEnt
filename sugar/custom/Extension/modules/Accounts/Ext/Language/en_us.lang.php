@@ -7,3 +7,4 @@ $mod_strings['LBL_RECORDVIEW_PANEL1'] = 'New Panel 1';
 $mod_strings['LBL_NEW_CODE_C'] = 'New Field CODE';
 $mod_strings['LBL_NEW_CODE2_C'] = 'xxxxxx';
 $mod_strings['LBL_CODE3_C'] = '3333';
+$mod_strings['LBL_DROPDOWN_C'] = 'New Dropdown';
