@@ -417,6 +417,30 @@ array (
               20 => 
               array (
               ),
+              21 => 
+              array (
+                'name' => 'new_code_c',
+                'label' => 'LBL_NEW_CODE_C',
+              ),
+              22 => 
+              array (
+              ),
+              23 => 
+              array (
+                'name' => 'new_code2_c',
+                'label' => 'new_code2_c',
+              ),
+              24 => 
+              array (
+              ),
+              25 => 
+              array (
+                'name' => 'code3_c',
+                'label' => 'LBL_CODE3_C',
+              ),
+              26 => 
+              array (
+              ),
             ),
           ),
         ),
