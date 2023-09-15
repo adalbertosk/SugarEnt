@@ -12,10 +12,10 @@
         'LBL_LINK_DESCRIPTION',
 
         //Link URL - For Sidecar modules
-        'javascript:parent.SUGAR.App.router.navigate("Currencies", {trigger: true});',
+//        'javascript:parent.SUGAR.App.router.navigate("Currencies", {trigger: true});',
 
         //Alternatively, if you are linking to BWC modules
-        //'./index.php?module=<module>&action=<action>',
+        './index.php?module=Administration&action=password_settings',
     );
 
     $admin_group_header[] = array(
