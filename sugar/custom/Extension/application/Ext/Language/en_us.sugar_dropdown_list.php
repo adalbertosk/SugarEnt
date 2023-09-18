@@ -7,3 +7,8 @@ $app_list_strings['dropdown_list']=array (
   'Y' => 'Year',
   '' => '',
 );
+$app_list_strings['status_list']=array (
+  'N' => 'New',
+  'P' => 'In Progress',
+  'C' => 'Completed',
+);

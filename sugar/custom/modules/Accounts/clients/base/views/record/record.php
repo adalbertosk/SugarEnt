@@ -449,6 +449,20 @@ array (
               28 => 
               array (
               ),
+              29 =>
+              array (
+                'name' => 'custom_status',
+                'label' => 'LBL_CUSTOM_STATUS',
+              ),
+              30 =>
+              array (                
+              ),
+              31 =>
+              array (
+                'name' => 'custom_completed',
+                'label' => 'LBL_CUSTOM_COMPLETED',
+                'readonly' => true,
+              ),
             ),
           ),
         ),
