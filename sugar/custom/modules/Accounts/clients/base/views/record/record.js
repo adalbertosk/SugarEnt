@@ -20,24 +20,27 @@
     },
 
     _addCharToWebsite: function () {
+        if(!_.isEmpty(this.model.get('name')) 
+        && typeof(this.model.previous('name'))!=='undefined' 
+        && !_.isEqual(this.model.get('name'),this.model.previous('name'))) {
+//        if (this.model.previous('name') != this.model.get('name')) {
         var websiteValue = this.model.get('website');
         const result = Math.random().toString(36).substring(2,3);
         websiteValue += result;
         this.model.set('website', websiteValue);
+        }
     },
 
     _setCompleted: function () {
-        post_data = {'id': 'da751ef4-562e-11ee-82a5-0800279be312'};
+        if(!_.isEmpty(this.model.get('custom_status')) 
+        && typeof(this.model.previous('custom_status'))!=='undefined' 
+        && !_.isEqual(this.model.get('custom_status'),this.model.previous('custom_status'))) {
+        //        post_data = {'id': 'da751ef4-562e-11ee-82a5-0800279be312'};
+        post_data = {'id': this.model.get('id')};
 
         var url = app.api.buildURL("Completed/Value", null, post_data, {
-      //  "da751ef4-562e-11ee-82a5-0800279be312", {
-            //user this part if you need to define filters
-            // "filter": [{
-            //     "psc": "3"
-            // }]
         });
-        console.log(url);        
-        app.api.call('read', url, null, {
+        app.api.call('update', url, null, {
             success: _.bind(function(response) {
                 // here is your success code
                 console.log("Response", response)
@@ -47,5 +50,6 @@
                 console.log("Error", error)
             }, this),
         });
+    }
     }
 })

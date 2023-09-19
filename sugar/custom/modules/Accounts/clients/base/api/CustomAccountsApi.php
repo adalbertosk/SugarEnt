@@ -81,9 +81,16 @@ class CustomAccountsApi extends SugarApi
 
         switch($requestType) {
             case 'GET':
-                $query = 'SELECT custom_completed FROM accounts_cstm WHERE id_c = "' . $id . '"';
+/*
+                $query = 'SELECT custom_completed FROM accounts_cstm WHERE id_c = ?';
                 $conn = $GLOBALS['db']->getConnection();
-                $stmt = $conn->executeQuery($query);
+                $stmt = $conn->executeQuery($query, array($id));
+*/
+                $builder = $GLOBALS['db']->getConnection()->createQueryBuilder();
+                $builder->select('custom_completed')->from('accounts_cstm');
+                $builder->where('id_c = ' . $builder->createPositionalParameter($id));
+                $stmt = $builder->execute();
+
                 $result = array();
                 foreach($stmt->fetchAll() as $row){
                     array_push($result, $row);
@@ -91,9 +98,15 @@ class CustomAccountsApi extends SugarApi
                 return $result;
                 break;
             case 'PUT':
-                $query = 'UPDATE accounts_cstm SET custom_completed = 1 WHERE id_c = "' . $id . '"';
+
+                $query = 'UPDATE accounts_cstm SET custom_completed = ? WHERE id_c = ?';
                 $conn = $GLOBALS['db']->getConnection();
-                $stmt = $conn->executeQuery($query);
+                $stmt = $conn->executeQuery($query, array(1, $id));
+
+/*
+                $fieldDefs = $GLOBALS['dictionary']['table']['fields'];
+                $GLOBALS['db']->updateParams('accounts_cstm', $fieldDefs, array('custom_completed' => '1',), array('id_c' => $id));
+*/
                 break;
         }
 
