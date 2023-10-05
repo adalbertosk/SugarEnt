@@ -11,3 +11,5 @@ $mod_strings['LBL_DROPDOWN_C'] = 'New Dropdown';
 
 $mod_strings['LBL_CUSTOM_STATUS'] = 'Status';
 $mod_strings['LBL_CUSTOM_COMPLETED'] = 'Completed';
+
+$mod_strings['LBL_HIDE_WEBSITE'] = 'Hide Website';

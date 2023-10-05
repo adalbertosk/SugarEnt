@@ -463,6 +463,14 @@ array (
                 'label' => 'LBL_CUSTOM_COMPLETED',
                 'readonly' => true,
               ),
+              32 =>
+              array (                
+              ),
+              33 =>
+              array (
+                'name' => 'pr_hide_website',
+                'label' => 'LBL_HIDE_WEBSITE',
+              ),
             ),
           ),
         ),
