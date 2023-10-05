@@ -191,4 +191,24 @@ $searchFields['Accounts'] = array (
   array (
     'query_type' => 'default',
   ),
+  'phone_alternate' => 
+  array (
+    'query_type' => 'default',
+  ),
+  'billing_address_street' => 
+  array (
+    'query_type' => 'default',
+  ),
+  'billing_address_city' => 
+  array (
+    'query_type' => 'default',
+  ),
+  'facebook' => 
+  array (
+    'query_type' => 'default',
+  ),
+  'twitter' => 
+  array (
+    'query_type' => 'default',
+  ),
 );
