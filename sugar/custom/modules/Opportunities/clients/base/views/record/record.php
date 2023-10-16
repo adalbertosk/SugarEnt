@@ -480,7 +480,7 @@ array (
             array (
               0 => 
               array (
-                'readonly' => false,
+                'readonly' => true,
                 'name' => 'approver_c',
                 'label' => 'LBL_APPROVER',
               ),
@@ -489,14 +489,14 @@ array (
               ),
               2 => 
               array (
-                'readonly' => false,
+                'readonly' => true,
                 'name' => 'approval_status_c',
                 'label' => 'LBL_APPROVAL_STATUS',
                 'span' => 12,
               ),
               3 => 
               array (
-                'readonly' => false,
+                'readonly' => true,
                 'name' => 'approved_date_c',
                 'label' => 'LBL_APPROVED_DATE',
               ),
@@ -514,7 +514,7 @@ array (
               ),
               7 => 
               array (
-                'readonly' => false,
+                'readonly' => true,
                 'name' => 'approved_c',
                 'label' => 'LBL_APPROVED',
               ),
