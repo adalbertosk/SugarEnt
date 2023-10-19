@@ -5,39 +5,49 @@
         this._super('initialize',[opts]);
     },
 
-_query: function (query) {
-        var options = _.isString(this.items) ?  app.lang.getAppListStrings(this.items) : this.items;
-        var data = {
-            results: [],
-            // Only show one "page" of results
-            more: false
-        };
+    loadEnumOptions: function(fetch, callback, error) {
         var self = this;
- 
-        if (_.isObject(options)) {
-            _.each(options, function (element, index) {
-                var text = "" + element;
-                // Additionally filter results based on query term
-                if (query.matcher(query.term, text)) {
-                    // If dropdown name is "segmentation"
-                    // use alternative method to set options
-                    if (self.name == 'sales_stage') {
-                        // Disabled attribute is main feature
-                        // It is processed by custom method
-                        data.results.push({id: index, 
-                                 text: text, 
-                                 disabled: self.setListItemActive(text)});
-                    } else {
-                        data.results.push({id: index, 
-                                           text: text});
-                    }
-                }
-            });
-        } else {
-            options = null;
-        }
-        query.callback(data);
+
     },
+
+    _render: function() {
+        var self = this;
+    },
+_query: function(query) {
+// query override
+var options = _.isString(this.items) ?  app.lang.getAppListStrings(this.items) : this.items;
+var data = {
+    results: [],
+    // Only show one "page" of results
+    more: false
+};
+var self = this;
+
+if (_.isObject(options)) {
+    _.each(options, function (element, index) {
+        var text = "" + element;
+        // Additionally filter results based on query term
+        if (query.matcher(query.term, text)) {
+            // If dropdown name is "segmentation"
+            // use alternative method to set options
+            if (self.name == 'sales_stage') {
+                // Disabled attribute is main feature
+                // It is processed by custom method
+                data.results.push({id: index, 
+                         text: text, 
+                         disabled: self.setListItemActive(text)});
+            } else {
+                data.results.push({id: index, 
+                                   text: text});
+            }
+        }
+    });
+} else {
+    options = null;
+}
+query.callback(data);
+
+},
 
     setListItemActive: function(text) {
         // Don't block option by default
