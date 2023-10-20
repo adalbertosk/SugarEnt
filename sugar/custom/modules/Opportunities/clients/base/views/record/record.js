@@ -29,7 +29,7 @@
                 approveButton.hide();
             }
         }
-        var rejectButton = this.getField('reject_button');
+/*         var rejectButton = this.getField('reject_button');
         if(rejectButton !== undefined){
             if(this.model.get('approver_c') === app.user.attributes.user_name && 
             this.model.get('approval_status_c') !== 'A'){
@@ -37,7 +37,7 @@
             } else {
                 rejectButton.hide();
             }
-        }
+        } */
     },
 
     approval: function() {
@@ -50,6 +50,18 @@
     },
 
     reject: function() {
-        this.model.set('approval_status_c', 'R');
+        var self = this;
+        app.drawer.open({
+            layout: 'reject_popup',
+            context: {
+                model: this.model,
+                title: 'IFrame Drawer'
+            },
+        },
+        function() {
+            console.log(self.model);
+            alert ('Drawer closed');
+        });
+//        this.model.set('approval_status_c', 'R');
     }
 })

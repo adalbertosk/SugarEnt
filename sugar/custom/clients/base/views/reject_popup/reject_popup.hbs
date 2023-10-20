@@ -1,0 +1,8 @@
+<div class="btn-toolbar pull-right dropdown">
+                {{#each meta.buttons}}
+                {{field ../this model=../this.model template="detail"}}
+            {{/each}}
+</div>
+
+<label for="reject_reason">Reject Reason:</label><br>
+<input type="text" id="reject_reason"><br>
