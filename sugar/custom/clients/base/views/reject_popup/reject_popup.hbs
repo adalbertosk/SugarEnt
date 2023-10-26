@@ -1,4 +1,4 @@
-<div class="btn-toolbar pull-right dropdown">
+<!-- <div class="btn-toolbar pull-right dropdown">
                 {{#each meta.buttons}}
                 {{field ../this model=../this.model template="detail"}}
             {{/each}}
@@ -6,3 +6,34 @@
 
 <label for="reject_reason">Reject Reason:</label><br>
 <input type="text" id="reject_reason"><br>
+-->
+<div>
+    <div>
+        <div class="headerpane">
+            <h1>
+                <span class="record-cell">
+                    {{str "LBL_PR_REJECT_OPPORTUNITIES_TITLE" module}}
+                </span>
+                <div class="btn-toolbar pull-right">
+                    <input type="button" class="btn btn-invisible btn-link" name="cancel_button" id="cancel_button"
+                        title="{{str "LBL_CANCEL_BUTTON_LABEL"}}" accesskey="{{str "LBL_CANCEL_BUTTON_KEY"}}" 
+                        value="{{str "LBL_CANCEL_BUTTON_LABEL" }}" />
+                    <input type="button" class="btn btn-primary" name="save_button" id="save_button" 
+                        title="{{str "LBL_SAVE_BUTTON_LABEL"}}" accesskey="{{str "LBL_SAVE_BUTTON_KEY"}}" 
+                        value="{{str "LBL_SAVE_BUTTON_LABEL" }}" />
+                </div>
+            </h1>
+        </div>
+        <div class="record">
+            <div class="row-fluid panel_body">
+                <div class="span12 record-cell edit" data-type="textarea" data-name="rejected_reason">
+                    <div class="record-label">
+                        {{str "LBL_PR_REJECTED_REASON" module}}
+                    </div>
+                    <textarea rows="5" cols="" id="rejected_reason" placeholder="Required" class="required"
+                        name="rejected_reason" aria-label={{str "LBL_PR_REJECTED_REASON" module}}></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
